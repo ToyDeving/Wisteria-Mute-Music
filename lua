@@ -46,8 +46,8 @@ button.MouseButton1Click:Connect(function()
 			Disabled = false
 			button.Image = unmuted_icon.Value
 			for i, v in pairs(Connections) do
-				if v then
-					v.Volume = Connections[v]
+				if i then
+					i.Volume = Connections[v]
 				end
 			end
 		else
