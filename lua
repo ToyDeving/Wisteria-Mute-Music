@@ -92,3 +92,9 @@ for _, v in pairs(Musics:GetChildren()) do
 		end
 	end)
 end
+local plr = game.Players.LocalPlayer
+plr.CharacterAdded:Connect(function(Char)
+    local GUI = plr.PlayerGui:WaitForChild("Bars"):WaitForChild("StomachFrame")
+    GUI.AnchorPoint = Vector2.new(1, 0.5)
+    GUI.Position = UDim2.new(0.99, 0, 0.5, 0)
+end)
