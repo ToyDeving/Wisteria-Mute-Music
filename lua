@@ -74,12 +74,12 @@ for _, v in pairs(Musics:GetChildren()) do
 	v:GetPropertyChangedSignal("Playing"):Connect(function() 
 		if not db then
 			if v.Playing == true then
-				if Disabled == true then
-					v.Volume = 0
-				end
 				if not table.find(Connections, v) then
 					Connections[v] = v.Volume
 				end
+				if Disabled == true then
+					v.Volume = 0
+				end			
 			else
 				if table.find(Connections, v) then
 					for i, t in pairs(Connections) do
