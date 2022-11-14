@@ -47,7 +47,8 @@ button.MouseButton1Click:Connect(function()
 			button.Image = unmuted_icon.Value
 			for i, v in pairs(Connections) do
 				if i then
-					i.Volume = Connections[v]
+					print(v, "volume changes")
+					i.Volume = v
 				end
 			end
 		else
@@ -61,7 +62,7 @@ button.MouseButton1Click:Connect(function()
 					v.Volume = 0
 				else
 					for i, t in pairs(Connections) do
-						if t == v then
+						if i == v then
 							Connections[v] = nil
 						end
 					end
