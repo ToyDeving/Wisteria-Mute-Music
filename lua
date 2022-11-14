@@ -11,7 +11,7 @@ frame.Size = UDim2.new(0, 35, 0.0329999998, 0)
 frame.Parent = mutemusic
 
 local button = Instance.new("ImageButton")
-button.Image = "rbxassetid://11559294097"
+button.Image = "rbxassetid://11559568726"
 button.BackgroundColor3 = Color3.new(1, 1, 1)
 button.BackgroundTransparency = 0.800000011920929
 button.Size = UDim2.new(1, 0, 1, 0)
@@ -19,12 +19,12 @@ button.Name = "Button"
 button.Parent = frame
 
 local muted_icon = Instance.new("StringValue")
-muted_icon.Value = "rbxassetid://11559283545"
+muted_icon.Value = "rbxassetid://11559576076"
 muted_icon.Name = "MutedIcon"
 muted_icon.Parent = frame
 
 local unmuted_icon = Instance.new("StringValue")
-unmuted_icon.Value = "rbxassetid://11559294097"
+unmuted_icon.Value = "rbxassetid://11559568726"
 unmuted_icon.Name = "UnmutedIcon"
 unmuted_icon.Parent = frame
 
