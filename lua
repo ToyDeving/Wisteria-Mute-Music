@@ -47,7 +47,7 @@ button.MouseButton1Click:Connect(function()
 			button.Image = unmuted_icon.Value
 			for i, v in pairs(Connections) do
 				if v then
-					v:Play()
+					v.Volume = Connections[v]
 				end
 			end
 		else
@@ -56,15 +56,13 @@ button.MouseButton1Click:Connect(function()
 			for _, v in pairs(Musics:GetChildren()) do
 				if v.Playing == true then
 					if not table.find(Connections, v) then
-						table.insert(Connections, v)
+						Connections[v] = v.Volume
 					end
-					db = true
-					v:Stop()
-					db = false
+					v.Volume = 0
 				else
 					for i, t in pairs(Connections) do
 						if t == v then
-							table.remove(Connections, i)
+							Connections[v] = nil
 						end
 					end
 				end
@@ -77,18 +75,16 @@ for _, v in pairs(Musics:GetChildren()) do
 		if not db then
 			if v.Playing == true then
 				if Disabled == true then
-					db = true
-					v:Stop()
-					db = false
+					v.Volume = 0
 				end
 				if not table.find(Connections, v) then
-					table.insert(Connections, v)
+					Connections[v] = v.Volume
 				end
 			else
 				if table.find(Connections, v) then
 					for i, t in pairs(Connections) do
 						if t == v then
-							table.remove(Connections, i)
+							Connections[v] = nil
 						end
 					end
 				end
