@@ -62,8 +62,10 @@ button.MouseButton1Click:Connect(function()
 					v:Stop()
 					db = false
 				else
-					if table.find(Connections, v) then
-						table.remove(Connections, table.find(Connections,v))
+					for i, t in pairs(Connections) do
+						if t == v then
+							table.remove(Connections, i)
+						end
 					end
 				end
 			end
@@ -84,7 +86,11 @@ for _, v in pairs(Musics:GetChildren()) do
 				end
 			else
 				if table.find(Connections, v) then
-					table.remove(Connections, table.find(Connections,v))
+					for i, t in pairs(Connections) do
+						if t == v then
+							table.remove(Connections, i)
+						end
+					end
 				end
 			end
 		end
